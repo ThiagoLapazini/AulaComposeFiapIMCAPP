@@ -34,6 +34,12 @@ fun LoginScreen() {
     var lembrarState = remember {
         mutableStateOf(false)
     }
+    var senhaState = remember {
+        mutableStateOf("")
+    }
+    val senhaUsuario = 123
+    val emailUsuario = "thiago@eyemobile.com.br"
+
 
     Box(modifier = Modifier.padding(32.dp)) {
         Column(
@@ -68,15 +74,18 @@ fun LoginScreen() {
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     OutlinedTextField(
-                        value = "",
-                        onValueChange = {},
+                        value = senhaState.value,
+                        onValueChange = {
+                            senhaState.value = it
+                        },
                         modifier = Modifier.fillMaxWidth(),
                         label = {
                             Text(text = "Senha")
                         }
                     )
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = {
+                        },
                         modifier = Modifier.padding(top = 32.dp)
                     ) {
                         Text(text = "Entrar")
@@ -86,7 +95,7 @@ fun LoginScreen() {
                     ) {
                         Checkbox(
                             checked = lembrarState.value,
-                            onCheckedChange = {lembrarState.value= it}
+                            onCheckedChange = { lembrarState.value = it }
                         )
                         Text(text = "Lembrar-me")
                     }

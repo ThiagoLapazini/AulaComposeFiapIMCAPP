@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.aulacomposefiapimcapp.ui.screen.ImcScreen
 import com.example.aulacomposefiapimcapp.ui.screen.LoginScreen
 import com.example.aulacomposefiapimcapp.ui.theme.AulaComposeFiapIMCAPPTheme
 
@@ -23,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    LoginScreen()
+                    ImcScreen()
                 }
             }
         }
